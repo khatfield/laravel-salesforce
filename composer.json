@@ -1,5 +1,5 @@
 {
-  "name": "khatfield/salesforce-service-provider",
+  "name": "khatfield/laravel-salesforce",
   "description": "Laravel Salesforce Service Provider",
   "license": "MIT",
   "repositories": [{
