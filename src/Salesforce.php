@@ -85,6 +85,11 @@ class Salesforce
         return $return;
     }
 
+    /**
+     * Get the standard XML Acknowledgement response
+     *
+     * @return false|string
+     */
     public function getResponse()
     {
         return file_get_contents('./xml/response.xml');
