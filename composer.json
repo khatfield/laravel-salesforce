@@ -13,5 +13,15 @@
     "psr-4": {
       "Khatfield\\LaravelSalesforce\\": "src/"
     }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Khatfield\\LaravelSalesforce\\SalesforceServiceProvider"
+      ],
+      "aliases": {
+        "Salesforce": "Khatfield\\LaravelSalesforce\\SalesforceFacade"
+      }
+    }
   }
 }

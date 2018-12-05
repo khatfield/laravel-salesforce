@@ -16,16 +16,18 @@ class SalesforceServiceProvider extends ServiceProvider
         $this->mergeConfigFrom($config, 'salesforce');
         $this->publishes([$config => config_path('salesforce.php')]);
 
-        $this->app->singleton('salesforce', function($app){
+        $this->app->singleton(Salesforce::class, function($app){
             $salesforce = new Salesforce();
             $salesforce->connect($app['config']);
 
             return $salesforce;
         });
+
+        $this->app->alias(Salesforce::class, 'salesforce');
     }
 
     public function provides()
     {
-        return ['salesforce', 'Khatfield\LaravelSalesforce\Salesforce'];
+        return ['salesforce', Salesforce::class];
     }
 }
