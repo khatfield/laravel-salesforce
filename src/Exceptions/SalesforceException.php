@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Khatfield\LaravelSalesforce;
+namespace Khatfield\LaravelSalesforce\Exceptions;
 
 use Exception;
 use Illuminate\Support\Facades\Log;

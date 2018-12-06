@@ -3,6 +3,7 @@
 namespace Khatfield\LaravelSalesforce;
 
 use Khatfield\SoapClient\ClientBuilder;
+use Khatfield\LaravelSalesforce\Exceptions\SalesforceException;
 use Khatfield\SoapClient\Result\SObject;
 
 /**
@@ -12,11 +13,6 @@ use Khatfield\SoapClient\Result\SObject;
 class Salesforce
 {
     public $client;
-
-    public function __construct()
-    {
-
-    }
 
     public function __call($method, $args)
     {
@@ -36,7 +32,7 @@ class Salesforce
         $conn_type = $external_config->get('salesforce.connection_type');
         $wsdl      = $external_config->get('salesforce.wsdl');
         if(empty($wsdl)) {
-            $wsdl = __DIR__ . '/wsdl/enterprise.wsdl.xml';
+            $wsdl = realpath(__DIR__ . '/../resources') . '/wsdl/enterprise.wsdl.xml';
         }
 
         try {
@@ -58,7 +54,7 @@ class Salesforce
      *
      * @return SObject
      */
-    public function readInbound($message)
+    protected function readInbound($message)
     {
         $message = trim($message);
         $sobject = null;
@@ -92,6 +88,6 @@ class Salesforce
      */
     public function getResponse()
     {
-        return file_get_contents('./xml/response.xml');
+        return file_get_contents(realpath(__DIR__ . '/../resources') . '/xml/response.xml');
     }
 }

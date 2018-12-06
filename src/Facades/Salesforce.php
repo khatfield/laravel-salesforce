@@ -1,11 +1,11 @@
 <?php
 
-namespace Khatfield\LaravelSalesforce;
+namespace Khatfield\LaravelSalesforce\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Class SalesforceFacade
+ * Class Salesforce
  * @package Khatfield\LaravelSalesforce
 
  * @method static void addHeader( $header)
@@ -35,7 +35,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static \Khatfield\SoapClient\Result\SendEmailResult sendEmail(array $emails)
  * @method static array setPassword(string $userId,string $password)
  */
-class SalesforceFacade extends Facade
+class Salesforce extends Facade
 {
     /**
      * Get the registered name of the component.
