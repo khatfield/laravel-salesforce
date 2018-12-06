@@ -18,6 +18,7 @@
   "extra": {
     "laravel": {
       "providers": [
+        "Khatfield\\LaravelSalesforce\\Providers\\SalesforceRequestServiceProvider",
         "Khatfield\\LaravelSalesforce\\Providers\\SalesforceServiceProvider"
       ],
       "aliases": {
