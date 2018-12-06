@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa49e8da9ca2ebd4f27cae21d4c3d5a3",
+    "content-hash": "da49752dc3339d95435adee5c814f989",
     "packages": [
         {
             "name": "khatfield/soap-client",
-            "version": "0.3.1",
+            "version": "0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/khatfield/soap-client.git",
-                "reference": "6be34b53467dcc74ec9a8964e39ba5eeb78f5bd9"
+                "reference": "c4ac824c2858cda1a553bf53996f854d4b4b5a3b"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://repos.hatfield.me/dist/khatfield/soap-client/khatfield-soap-client-6be34b53467dcc74ec9a8964e39ba5eeb78f5bd9-zip-7f5395.tar",
-                "reference": "6be34b53467dcc74ec9a8964e39ba5eeb78f5bd9",
-                "shasum": "0b99c70779d3bf98c3de2f224312cfccca30c213"
+                "url": "https://repos.hatfield.me/dist/khatfield/soap-client/khatfield-soap-client-c4ac824c2858cda1a553bf53996f854d4b4b5a3b-zip-64b933.tar",
+                "reference": "c4ac824c2858cda1a553bf53996f854d4b4b5a3b",
+                "shasum": "305964397631ef14b40f4080327e0a71e62ba679"
             },
             "require": {
                 "ext-json": "*",
@@ -71,9 +71,9 @@
                 "web services"
             ],
             "support": {
-                "source": "https://github.com/khatfield/soap-client/tree/0.3.1"
+                "source": "https://github.com/khatfield/soap-client/tree/0.3.2"
             },
-            "time": "2018-12-04T19:36:07+00:00"
+            "time": "2018-12-05T18:58:32+00:00"
         },
         {
             "name": "psr/log",
@@ -124,16 +124,16 @@
         },
         {
             "name": "symfony/contracts",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/contracts.git",
-                "reference": "3edf0ab943d1985a356721952cba36ff31bd6e5f"
+                "reference": "1aa7ab2429c3d594dd70689604b5cf7421254cdf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/contracts/zipball/3edf0ab943d1985a356721952cba36ff31bd6e5f",
-                "reference": "3edf0ab943d1985a356721952cba36ff31bd6e5f",
+                "url": "https://api.github.com/repos/symfony/contracts/zipball/1aa7ab2429c3d594dd70689604b5cf7421254cdf",
+                "reference": "1aa7ab2429c3d594dd70689604b5cf7421254cdf",
                 "shasum": ""
             },
             "require": {
@@ -188,7 +188,7 @@
                 "interoperability",
                 "standards"
             ],
-            "time": "2018-11-24T09:35:08+00:00"
+            "time": "2018-12-05T08:06:11+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -261,6 +261,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-simplexml": "*"
+    },
     "platform-dev": []
 }

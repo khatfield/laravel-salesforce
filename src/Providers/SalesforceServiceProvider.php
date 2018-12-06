@@ -5,6 +5,7 @@ namespace Khatfield\LaravelSalesforce\Providers;
 use Illuminate\Support\ServiceProvider;
 use Khatfield\SoapClient\Result\SObject;
 use Khatfield\LaravelSalesforce\Salesforce;
+use Illuminate\Http\Request;
 
 class SalesforceServiceProvider extends ServiceProvider
 {
