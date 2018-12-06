@@ -18,10 +18,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Khatfield\\LaravelSalesforce\\SalesforceServiceProvider"
+        "Khatfield\\LaravelSalesforce\\Providers\\SalesforceServiceProvider"
       ],
       "aliases": {
-        "Salesforce": "Khatfield\\LaravelSalesforce\\SalesforceFacade"
+        "Salesforce": "Khatfield\\LaravelSalesforce\\Facades\\Salesforce"
       }
     }
   }
