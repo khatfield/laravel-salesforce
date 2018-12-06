@@ -51,7 +51,7 @@ class SalesforceServiceProvider extends ServiceProvider
             return $return;
         });
 
-        $config = __DIR__ . '/config/config.php';
+        $config = realpath(__DIR__ . '/..') . '/config/config.php';
         $this->mergeConfigFrom($config, 'salesforce');
         $this->publishes([$config => config_path('salesforce.php')]);
 
