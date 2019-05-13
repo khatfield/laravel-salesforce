@@ -5,6 +5,7 @@ namespace Khatfield\LaravelSalesforce\Providers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
+use Khatfield\SoapClient\Result\SObject;
 
 class SalesforceRequestServiceProvider extends ServiceProvider
 {
@@ -40,7 +41,7 @@ class SalesforceRequestServiceProvider extends ServiceProvider
 
                 if(is_object($sobject)) {
                     foreach($sobject as $field => $value) {
-                        $return->$field = $value;
+                        $return->$field = (string) $value;
                     }
                 }
             }

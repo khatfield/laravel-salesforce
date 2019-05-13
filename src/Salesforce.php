@@ -4,6 +4,7 @@ namespace Khatfield\LaravelSalesforce;
 
 use Khatfield\SoapClient\ClientBuilder;
 use Khatfield\LaravelSalesforce\Exceptions\SalesforceException;
+use Khatfield\SoapClient\Header\CallOptions;
 use Khatfield\SoapClient\Result\SObject;
 
 /**
@@ -31,6 +32,7 @@ class Salesforce
         $token     = $external_config->get('salesforce.token');
         $conn_type = $external_config->get('salesforce.connection_type');
         $wsdl      = $external_config->get('salesforce.wsdl');
+        $name      = $external_config->get('salesforce.app_name');
         if(empty($wsdl)) {
             $wsdl = realpath(__DIR__ . '/../resources') . '/wsdl/enterprise.wsdl.xml';
         }
@@ -43,6 +45,9 @@ class Salesforce
             }
             $builder      = new ClientBuilder($wsdl, $user, $pass, $token);
             $this->client = $builder->build($type);
+            if($conn_type == 'partner'){
+                $this->client->addHeader(new CallOptions($name));
+            }
         } catch(\Exception $e) {
             throw new SalesforceException('Exception at Constructor' . $e->getMessage() . "\n\n" . $e->getTraceAsString());
         }
