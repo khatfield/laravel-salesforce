@@ -11,6 +11,11 @@ class SalesforceServiceProvider extends ServiceProvider
 
     protected $sf_client;
 
+    /**
+     * Register services
+     *
+     * @return void
+     */
     public function register()
     {
         $config = realpath(__DIR__ . '/..') . '/config/config.php';
@@ -26,6 +31,20 @@ class SalesforceServiceProvider extends ServiceProvider
         });
 
         $this->app->alias(Salesforce::class, 'salesforce');
+    }
+
+    /**
+     * Bootstrap Services
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $config = realpath(__DIR__ . '/..') . '/config/config.php';
+        $this->publishes(
+            [
+                $config => config_path('salesforce.php')
+            ], 'salesforce-config');
     }
 
     public function provides()

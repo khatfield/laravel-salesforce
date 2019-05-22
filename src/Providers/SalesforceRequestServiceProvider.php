@@ -11,7 +11,7 @@ class SalesforceRequestServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        //register request macro
+        //register request macros
         Request::macro('isSalesforce', function()
         {
             $is_xml = (strtolower($this->getContentType()) == 'xml');
@@ -49,4 +49,5 @@ class SalesforceRequestServiceProvider extends ServiceProvider
             return $return;
         });
     }
+
 }

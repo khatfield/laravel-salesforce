@@ -33,6 +33,8 @@ class Salesforce
         $conn_type = $external_config->get('salesforce.connection_type');
         $wsdl      = $external_config->get('salesforce.wsdl');
         $name      = $external_config->get('salesforce.app_name');
+        $version   = $external_config->get('app.version');
+
         if(empty($wsdl)) {
             $wsdl = realpath(__DIR__ . '/../resources') . '/wsdl/enterprise.wsdl.xml';
         }
@@ -40,6 +42,7 @@ class Salesforce
         try {
             if($conn_type == 'partner') {
                 $type = ClientBuilder::PARTNER;
+                $name = $name . '/' . $version;
             } else {
                 $type = ClientBuilder::ENTERPRISE;
             }
