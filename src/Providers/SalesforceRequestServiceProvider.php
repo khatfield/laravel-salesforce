@@ -14,7 +14,7 @@ class SalesforceRequestServiceProvider extends ServiceProvider
         //register request macros
         Request::macro('isSalesforce', function()
         {
-            $is_xml = (strtolower($this->getContentType()) == 'xml');
+            $is_xml = (strtolower($this->getContentTypeFormat()) == 'xml');
 
             return ($is_xml && stripos($this->getContent(), 'sforce'));
         });
